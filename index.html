@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors 5</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+ <div class="mainContainer">
+
+    <div class="h1Container">
+       <h1 class="mainHeading">Rock Paper Scissors 5</h1>
+       <p class="pHeading">Its 5 games, the player with the highest score wins!</p>
+    </div>
+
+    <div class="selections">
+        <h2 class="h2p" id="player">
+          Player Choses: <span class="playerChoice">  </span>
+        </h2>
+    
+
+        <h2 class="h2p" id="computer">
+            Computer Choses: <span class="computerChoice"></span>
+        </h2>
+
+        <h2 class="h2p" id="Result">
+            Match Result: <span class="matchResult"></span>
+        </h2>
+
+        <h2 class="h2p" id="playerScore">
+            Player Score: <span class="score"></span>
+        </h2>
+
+        <h2 class="h2p" id="finalResults">
+            Final Result: <span class="finalResult" id="yourScore"></span>
+        </h2>
+    </div>
+
+    <div class="reset">
+        <button id="reset">Reset</button>
+    </div>
+
+
+     <div class="imageContainer">
+
+        <div class="imageDiv">
+         <img class="rockImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlxrcwhDouTcXRiqWgWEvJvJWjWg80iLUYCw&usqp=CAU" alt="picture of a rock" width="200px" height="200px">
+        
+         <button class="buttons" id="btn" value="Rock">Rock</button>
+        
+        </div>
+
+        <div class="imageDiv">
+         
+            <img src="https://images.pexels.com/photos/6373296/pexels-photo-6373296.jpeg?auto=compress&cs=tinysrgb&w=600" alt="picture of a hand holding a paper" width="200px" height="200px">
+           
+            <button class="buttons" id="btn" value="Paper">Paper</button>
+        
+        </div>
+
+        <div class= "imageDiv">
+         
+            <img src="data:image/jpeg;base64,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" alt="picture of a hand holding a scissors" width="200px" height="200px">
+        
+            <button class="buttons" id="btn" value="Scissors">Scissors</button>
+        
+        </div>
+        
+    </div>
+
+    
+
+   
+
+
+ </div>
+
+
+
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
